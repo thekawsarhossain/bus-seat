@@ -1,3 +1,10 @@
+// getting loggedin user info here
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (!user?.userName) {
+  window.location.href = "index.html";
+}
+
 // getting all the seats class here
 const seats = document.querySelectorAll(".seat");
 const bookBtn = document.getElementById("book-btn");
@@ -5,9 +12,6 @@ const cancelBtn = document.getElementById("cancel-btn");
 
 // date here
 let today = new Date().toLocaleDateString();
-
-// getting loggedin user info here
-const user = JSON.parse(localStorage.getItem("user"));
 
 for (let i = 0; i < seats?.length; i++) {
   const seat = seats[i];
